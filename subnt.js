@@ -136,7 +136,7 @@ function generarPorSubRed() {
         let direcciones = new Array(nslt);
         let direcciones2 = new Array(nslt);
         for (let i = 0; i < direcciones.length; i++) {
-            direcciones[i] = { numerosubred: i+1, subred: 1, desde: 1, hasta: 1, broadcast: 1 };
+            direcciones[i] = { numerosubred: i+1, subred: "nd", desde: "nd", hasta: 1, broadcast: 1 };
         }
 
         let tablaDirecciones = document.getElementById("direcciones");
