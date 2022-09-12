@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="subnt.js"></script>
+        <title>Subneteo Bellako</title>
+    </head>
+    <body>
+        <div>
+            <h1>
+                Calculando subredes
+            </h1>
+            <div>
+                Ingresa la dirección IP:
+                <input type="text">
+                <input type="text">
+                <input type="text">
+                <input type="text">
+                /
+                <input type="text">
+            </div>
+            <div>
+                <p></p>
+                <input type="text">
+                <select>
+                    <option value="v1">Número de subredes</option>
+                    <option value="v1">Número de hosts</option>
+                </select>
+            </div>
+            <input type="button" value="Iniciar" onclick="generarPorSubRed()"
+                id="boton">
+            <hr>
+            <p id="mascara-subred">
+                Máscara de subred:
+            </p>
+            <div class="tablaa">
+                <table border="1">
+                    <tr>
+                        <th>
+                            Número de Subred
+                        </th>
+                        <th>
+                            Saltos por subred
+                        </th>
+                        <th>
+                            Subred
+                        </th>
+                        <th>
+                            Desde
+                        </th>
+                        <th>
+                            Hasta
+                        </th>
+                        <th>
+                            Broadcast
+                        </th>
+                        <th>
+                            Número de hosts
+                        </th>
+    
+                    </tr>
+                </table>
+            </div>
+            
+
+        </div>
+        <style>
+            hr{
+                width: 70%;
+            }
+            div{
+                text-align: center;
+            }
+            .tablaa{
+                display: flex;
+                justify-content: center ;
+            }
+            body{
+                font-family:'Courier New', Courier, monospace;
+            }
+            table{
+                align-content: center;
+                align-items: center;
+                border-collapse: collapse;
+            }
+            th {
+                padding: 10px;
+                margin: 150px;
+            }
+            #boton{
+                margin-top: 10px;
+                width: 120px;
+                height: 40px;
+                border: none;
+                border-radius: 15px;
+            }
+            #boton:hover{
+                background-color: rgb(154, 154, 154);
+                cursor: pointer;
+            }
+            input{
+                border-radius: 3px;
+            }
+        </style>
+    </body>
+</html>
