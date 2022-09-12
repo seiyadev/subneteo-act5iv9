@@ -14,29 +14,30 @@
             </h1>
             <div>
                 Ingresa la dirección IP:
-                <input type="text">
-                <input type="text">
-                <input type="text">
-                <input type="text">
+                <input type="text" id="ip1">
+                <input type="text" id="ip2">
+                <input type="text" id="ip3">
+                <input type="text" id="ip4">
                 /
-                <input type="text">
+                <select id="nbits">
+                    <option value="8">8</option>
+                    <option value="16">16</option>
+                    <option value="24">24</option>
+                </select>
             </div>
             <div>
                 <p></p>
-                <input type="text">
-                <select>
-                    <option value="v1">Número de subredes</option>
-                    <option value="v1">Número de hosts</option>
+                <input type="text" id="nslt" required>
+                <select id="opc">
+                    <option value="1">Número de subredes</option>
+                    <option value="2">Número de hosts</option>
                 </select>
             </div>
-            <input type="button" value="Iniciar" onclick="generarPorSubRed()"
+            <input type="button" value="Iniciar" onclick="botonSelect()"
                 id="boton">
             <hr>
-            <p id="mascara-subred">
-                Máscara de subred:
-            </p>
             <div class="tablaa">
-                <table border="1">
+                <table border="1" id="direcciones">
                     <tr>
                         <th>
                             Número de Subred
@@ -59,11 +60,15 @@
                         <th>
                             Número de hosts
                         </th>
-    
+                        <th>
+                            Máscara de Subred
+                        </th>
                     </tr>
                 </table>
             </div>
-            
+            <div class="div-boton">
+                <input type="button" value="Convertir a binario" id="boton">
+            </div>
 
         </div>
         <style>
@@ -100,8 +105,14 @@
                 background-color: rgb(154, 154, 154);
                 cursor: pointer;
             }
-            input{
-                border-radius: 3px;
+            input:not([type="button"]) {
+                border-radius: 2px;
+            }
+            .div-boton{
+                display: flex;
+                justify-content: end;
+                margin-left: 90%;
+                margin-right: 10%;
             }
         </style>
     </body>
