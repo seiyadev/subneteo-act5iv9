@@ -30,7 +30,6 @@
                 <input type="text" id="nslt" required>
                 <select id="opc">
                     <option value="1">Número de subredes</option>
-                    <option value="2">Número de hosts</option>
                 </select>
             </div>
             <input type="button" value="Iniciar" onclick="botonSelect()"
@@ -55,6 +54,13 @@
                             Broadcast
                         </th>
                     </tr>
+                    <tr>
+                        <td id="numsbrd"></td>
+                        <td id="sbr"></td>
+                        <td id="dsd"></td>
+                        <td id="hst"></td>
+                        <td id="bct"></td>
+                    </tr>
                 </table>
                 <table border="1" id="direcciones2">
                     <tr>
@@ -67,6 +73,11 @@
                         <th>
                             Máscara de Subred
                         </th>
+                    </tr>
+                    <tr>
+                        <td id="spsbrd"></td>
+                        <td id="nhostss"></td>
+                        <td id="masksub"></td>
                     </tr>
                 </table>
             </div>
@@ -81,6 +92,7 @@
             .tablaa{
                 display: flex;
                 justify-content: center ;
+                font-size: 12px;
             }
             table{
                 margin: 10px;

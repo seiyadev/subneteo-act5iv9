@@ -129,17 +129,57 @@ function generarPorSubRed() {
     ipdec.push(ip3);
     ipdec.push(ip4);
 
+    let bin1 = convertirABinario(ipdec[0]);
+    let bin2 = convertirABinario(ipdec[1]);
+    let bin3 = convertirABinario(ipdec[2]);
+    let bin4 = convertirABinario(ipdec[3]);
+    let bin5 = convertirABinario(ipdec[3]+1);
+    let bin6 = convertirABinario(ipdec[3]+saltosRed-2);
+    let bin7 = convertirABinario(ipdec[3]+saltosRed-1);
+    let ipbin = [bin1, bin2, bin3, bin4];
+
+    const p1 = document.getElementById("numsbrd");
+    const p2 = document.getElementById("sbr");
+    const p3 = document.getElementById("dsd");
+    const p4 = document.getElementById("hst");
+    const p5 = document.getElementById("bct");
+    p1.innerText = "1";
+    p2.innerText = ipbin;
+    p3.innerText = [bin1, bin2, bin3, bin5];
+    p4.innerText = [bin1, bin2, bin3, bin6];
+    p5.innerText = [bin1, bin2, bin3, bin7];
+
+    const p6 = document.getElementById("spsbrd");
+    const p7 = document.getElementById("nhostss");
+    const p8 = document.getElementById("masksub");
+    p6.innerText = saltosRed;
+    p7.innerText = hosts;
+    p8.innerText = mascaraSubred;
+
     let direcciones = new Array(nslt);
     let direcciones2 = new Array(nslt);
-    for (let i = 0; i < direcciones.length; i++) {
+    for (let i = 1; i < direcciones.length; i++) {
         ipdec[3] += saltosRed;
         let bin1 = convertirABinario(ipdec[0]);
         let bin2 = convertirABinario(ipdec[1]);
         let bin3 = convertirABinario(ipdec[2]);
         let bin4 = convertirABinario(ipdec[3]);
-        let arr = [ipdec[0], ipdec[1], ipdec[2], ipdec[3]];
-        let arr2 = [bin1, bin2, bin3, bin4];
-        direcciones[i] = { numerosubred: i + 1, subred: arr, desde: 2, hasta: 1, broadcast: 1 };
+        let bin5 = convertirABinario(ipdec[3]-1);
+        let bin6 = convertirABinario(ipdec[3]+1);
+        let bin7 = convertirABinario(ipdec[3]-2);
+
+        let sbrd = [ipdec[0], ipdec[1], ipdec[2], ipdec[3]];
+        let sbrd2 = [bin1, bin2, bin3, bin4];
+
+        let brd = [ipdec[0], ipdec[1], ipdec[2], ipdec[3]-1];
+        let brarr = [bin1, bin2, bin3, bin5];
+
+        let desde = [ipdec[0], ipdec[1], ipdec[2], ipdec[3]+1];
+        let desde2 = [bin1, bin2, bin3, bin6];
+
+        let hasta = [ipdec[0], ipdec[1], ipdec[2], ipdec[3]+saltosRed-2];
+        let hasta2 = [bin1, bin2, bin3, bin7];
+        direcciones[i] = { numerosubred: i + 1, subred: sbrd2, desde: desde2, hasta: hasta2, broadcast: brarr };
     }
     let tablaDirecciones = document.getElementById("direcciones");
     let cuerpoTabla = document.createElement("tbody");
@@ -164,7 +204,7 @@ function generarPorSubRed() {
         fila.appendChild(td);
 
         td = document.createElement("td");
-        td.innerText = p.hasta;
+        td.innerText = p.broadcast;
         fila.appendChild(td);
 
         cuerpoTabla.appendChild(fila);
@@ -173,6 +213,7 @@ function generarPorSubRed() {
     tablaDirecciones.appendChild(cuerpoTabla);
 
 
+    
     for (let i = 0; i < direcciones2.length; i++) {
         direcciones2[i] = { SaltosSubRed: saltosRed, nhosts: hosts, mascara: mascaraSubred };
     }
@@ -198,4 +239,6 @@ function generarPorSubRed() {
         cuerpoTabla2.appendChild(fila);
     });
     tablaDirecciones2.appendChild(cuerpoTabla2);
+
+    
 }
