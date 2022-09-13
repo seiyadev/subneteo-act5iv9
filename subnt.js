@@ -124,7 +124,17 @@ function generarPorSubRed() {
         }
         let hosts = 2 ** cc - 2;
 
-        
+        let vp1 = convertirABinario(ip1);
+        let vp2 = convertirABinario(ip2);
+        let vp3 = convertirABinario(ip3);
+        let vp4 = convertirABinario(ip4);
+
+        let ipobt = new Array; //Ip subred obtenida
+        ipobt.push(vp1);
+        ipobt.push(vp2);
+        ipobt.push(vp3);
+        ipobt.push(vp4);
+        console.log(ipobt);
 
 
 
@@ -136,7 +146,7 @@ function generarPorSubRed() {
         let direcciones = new Array(nslt);
         let direcciones2 = new Array(nslt);
         for (let i = 0; i < direcciones.length; i++) {
-            direcciones[i] = { numerosubred: i+1, subred: "nd", desde: "nd", hasta: 1, broadcast: 1 };
+            direcciones[i] = { numerosubred: i+1, subred: ipobt, desde: "nd", hasta: 1, broadcast: 1 };
         }
 
         let tablaDirecciones = document.getElementById("direcciones");
