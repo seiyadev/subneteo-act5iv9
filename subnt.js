@@ -41,8 +41,17 @@ function convertirABinario(num) {
         num = parseInt(num / 2);
         binario = (num % 2) + (binario);
     }
+
+    for(var i=0; i<binario.length; i++){
+        if(binario.length<8){
+            binario += "0";
+        }
+    }
     return binario;
 }
+
+let l = convertirABinario(10)
+console.log(l)
 
 function generarPorSubRed() {
     let ip1 = parseInt(document.getElementById("ip1").value);
