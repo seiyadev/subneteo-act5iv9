@@ -44,7 +44,7 @@ function convertirABinario(num) {
 
     for(var i=0; i<binario.length; i++){
         if(binario.length<8){
-            binario += "0";
+            binario = "0" + binario;
         }
     }
     return binario;
